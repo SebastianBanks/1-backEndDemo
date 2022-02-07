@@ -20,7 +20,10 @@ app.get("/api/inventory", (req, res) => {
 app.get("/api/inventory/:index", (reg, res) => {
     const item = inventory[+reg.params.index]
     res.status(200).send(item)
+
+    // res.status(200).sent(inventory[+req.params.index])
 })
 
+const SERVER_PORT = 5050
 
-app.listen(5050, () => console.log("Server running on port 5050 :)"))
+app.listen(SERVER_PORT, () => console.log(`Server running on port ${SERVER_PORT} :)`))
